@@ -3,6 +3,7 @@ import './App.css';
 import Person from './Person/Person';
 
 // Use capital letter(App) since we are using hook ie. "useState".
+// these are stateful components
 const App = props => {
   // useState return array of 2 values i.e. initial value and reset value.
   const [ personsState, setPersonsState ] = useState({
