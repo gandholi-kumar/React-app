@@ -2,26 +2,28 @@ import React, { useState } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
-const app = () => {
-  const [personsState, setPersonsState] = useState({
+// Use capital letter(App) since we are using hook ie. "useState".
+const App = props => {
+  // useState return array of 2 values i.e. initial value and reset value.
+  const [ personsState, setPersonsState ] = useState({
     persons: [
       { name: 'Max', age: 26 },
       { name: 'Mathew', age: 27 }
-    ],
-    otherState: 'some other value'
+    ]
   });
 
+  // We can use multiple useState
+  const [otherState, setOtherState] = useState('some other value');
+
+  console.log(personsState, otherState);
+
   const switchNameHandler = () => {
-    // V1
     setPersonsState({
       persons: [
         { name: 'taylor', age: 34 },
         { name: 'Mathew', age: 27 }
       ]
     });
-
-    // V2
-    // setPersonsState(this.setState(this.state.persons.reverse()));
   };
 
   return (
@@ -34,4 +36,4 @@ const app = () => {
   );
 }
 
-export default app;
+export default App;
